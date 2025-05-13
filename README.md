@@ -9,4 +9,6 @@ Exemplo de trace, destacando a consulta à base de dados:
 
 ![Trace - destaque para a consulta ao banco](img/jaeger-01.png)
 
+Detalhamento exibindo o consumo de tokens (em testes com o Azure OpenAI):
+
 ![Trace - destaque para o consumo de tokens](img/jaeger-02.png)
