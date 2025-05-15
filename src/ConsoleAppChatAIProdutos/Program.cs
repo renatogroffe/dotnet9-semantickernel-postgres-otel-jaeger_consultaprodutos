@@ -108,12 +108,13 @@ Kernel kernel = kernelBuilder.Build();
 var aiChatService = kernel.GetRequiredService<IChatCompletionService>();
 var chatHistory = new ChatHistory();
 while (true)
-{
-    using var activity1 = OpenTelemetryExtensions.ActivitySource
-        .StartActivity("PerguntaChatIAProdutos")!;
-    
+{    
     Console.WriteLine("Sua pergunta:");
     var userPrompt = Console.ReadLine();
+
+    using var activity1 = OpenTelemetryExtensions.ActivitySource
+        .StartActivity("PerguntaChatIAProdutos")!;
+
     chatHistory.Add(new ChatMessageContent(AuthorRole.User, userPrompt));
 
     Console.WriteLine();
